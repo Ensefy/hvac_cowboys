@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HVAC Cowboys – Kansas City’s Most Trusted HVAC Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    /* Global */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      scroll-behavior: smooth;
+      background: #ffffff;
+    }
+
+    /* Fade-Up Animation (used alongside AOS for small elements) */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeUp { animation: fadeUp 1s ease-out forwards; opacity: 0; }
+    .delay-200 { animation-delay: .2s; }
+    .delay-400 { animation-delay: .4s; }
+    .delay-600 { animation-delay: .6s; }
+
+    /* Small visual helpers for hero frame */
+    /* Ensure hero frame has the white border look when on dark environments */
+    .hero-frame {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+      border: 12px solid rgba(255,255,255,0.92);
+    }
+
+    @media (min-width: 841px) {
+  #menuBtn {
+    display: none;
+  }
+}
+
+@media (min-width: 841px) {
+  #desktopNav {
+    display: flex;
+  }
+}
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+ <!-- HERO + NAV HEADER -->
+<header class="max-w-[1600px] mx-auto px-4 pt-2.5" id="hero">
+
+  <!-- HERO card -->
+<div class="relative rounded-3xl overflow-hidden bg-black h-[600px] md:h-[717px]" >
+
+    <!-- background image -->
+    <div class="absolute inset-0">
+      <img src="assets/images/hero3.jpg"
+           class="w-full h-full object-cover object-center">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60"></div>
+    </div>
+
+    <!-- NAV -->
+   <div class="relative z-10">
+  <div class="flex items-center justify-between px-6 py-7">
+
+    <!-- LEFT: Logo + Text -->
+    <div class="flex items-center gap-4">
+      <img src="assets/images/logo.jpg" 
+           alt="HVAC Cowboys Logo" 
+           class="w-16 h-16 rounded-full object-cover border-2 border-white/50" />
+
+      <div>
+        <div class="text-white font-semibold text-xl">HVAC Cowboys</div>
+        <div class="text-yellow-200 text-sm -mt-1">Your Trusted HVAC Service Provider</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Desktop Nav + Button -->
+    <div id="desktopNav" class="hidden items-center gap-8">
+      <nav class="flex gap-8 text-white/90 font-medium">
+        <a href="#services" class="nav-link hover:text-yellow-400">Services</a>
+        <a href="#about" class="nav-link hover:text-yellow-400">About Us</a>
+        <a href="#faq" class="nav-link hover:text-yellow-400">FAQ</a>
+        <a href="#contact" class="nav-link hover:text-yellow-400">Contact</a>
+      </nav>
+
+      <button class="bg-yellow-400 text-black font-semibold px-5 py-2 rounded-full hover:bg-yellow-500">
+        Free Quote
+      </button>
+    </div>
+
+    <!-- Mobile Menu Button -->
+   <button id="menuBtn" class="block lg:hidden text-white text-2xl">☰</button>
+
+  </div>
+</div>
+
+
+      <!-- Mobile Menu (fixed overlay) -->
+<div id="mobileMenu" class="hidden fixed inset-0 bg-black/90 text-white flex flex-col gap-6 px-6 py-20 z-50">
+  <a href="#hero" class="mobile-link text-xl font-semibold hover:text-yellow-400">Home</a>
+  <a href="#services" class="mobile-link text-xl font-semibold hover:text-yellow-400">Services</a>
+  <a href="#about" class="mobile-link text-xl font-semibold hover:text-yellow-400">About Us</a>
+  <a href="#faq" class="mobile-link text-xl font-semibold hover:text-yellow-400">FAQ</a>
+  <a href="#contact" class="mobile-link text-xl font-semibold hover:text-yellow-400">Contact</a>
+  <button class="bg-yellow-400 text-black font-semibold px-5 py-2 rounded-full hover:bg-yellow-500 mt-4 w-full">
+    Free Quote
+  </button>
+</div>
+
+
+    <!-- HERO CONTENT -->
+    <div class="relative z-10 flex flex-col items-center text-center justify-center px-6 pt-20 md:pt-32 lg:pt-40 pb-24">
+      
+      <!-- HEADING -->
+      <h1 class="text-white font-extrabold leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+          data-aos="fade-up" data-aos-delay="200">
+        HVAC Cowboys
+      </h1>
+
+      <!-- SUB TEXT -->
+      <p class="mt-6 text-white/85 max-w-2xl text-sm sm:text-base md:text-lg"
+         data-aos="fade-up" data-aos-delay="350">
+        Riding to your rescue with professional HVAC and plumbing services. Experience the difference of cowboy-quality workmanship.
+      </p>
+
+      <!-- BUTTON -->
+      <a href="#services"
+   class="scroll-link mt-8 border border-white text-white bg-transparent px-7 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition"
+   data-aos="fade-up" data-aos-delay="500">
+   Learn More
+</a>
+
+</div>
+
+  </div>
+</header>
+
+ <!-- SERVICES (hover effect, no dark overlay) -->
+<section id="services" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center text-red-800 mb-3" data-aos="fade-up">Our Services</h2>
+    <p class="text-center text-gray-700 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+      From HVAC installations to emergency repairs, we've got you covered with professional, reliable service.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos="fade-up">
+        <div class="relative overflow-hidden">
+          <img src="assets/images/havc.jpg" alt="HVAC Installation"
+               class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-6 transition-all duration-500 group-hover:translate-y-1">
+          <h3 class="text-xl font-semibold text-red-800 mb-2 group-hover:text-yellow-500 transition">HVAC Installation</h3>
+          <p class="text-gray-600 text-sm mb-4 opacity-80">Professional installation of heating and cooling systems with warranty coverage.</p>
+          <button class="bg-red-700 text-white px-5 py-2 rounded-full font-medium hover:bg-yellow-700 transition">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="150">
+        <div class="relative overflow-hidden">
+          <img src="assets/images/ac.jpg" alt="AC Repair"
+               class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-6 transition-all duration-500 group-hover:translate-y-1">
+          <h3 class="text-xl font-semibold text-red-800 mb-2 group-hover:text-yellow-500 transition">AC Repair & Maintenance</h3>
+          <p class="text-gray-600 text-sm mb-4 opacity-80">Expert repair and maintenance to keep your system running efficiently.</p>
+          <button class="bg-red-700 text-white px-5 py-2 rounded-full font-medium hover:bg-yellow-700 transition">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="group rounded-xl overflow-hidden bg-white shadow-md transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative overflow-hidden">
+          <img src="assets/images/plumbing.webp" alt="Plumbing Services"
+               class="h-64 w-full object-cover transition duration-700 group-hover:scale-110">
+        </div>
+        <div class="p-6 transition-all duration-500 group-hover:translate-y-1">
+          <h3 class="text-xl font-semibold text-red-800 mb-2 group-hover:text-yellow-500 transition">Plumbing Services</h3>
+          <p class="text-gray-600 text-sm mb-4 opacity-80">Complete plumbing solutions including repairs, installations, and emergency services.</p>
+          <button class="bg-red-700 text-white px-5 py-2 rounded-full font-medium hover:bg-yellow-700 transition">Learn More</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+ <!-- COWBOY SIX-SHOOTER CODE OF CONDUCT -->
+<section id="conduct" class="py-20 bg-yellow-50">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <img src="assets/images/logo.jpg" alt="logo" class="w-24 mx-auto mb-6" data-aos="fade-up" />
+    <h2 class="text-3xl font-bold text-red-800 mb-8" data-aos="fade-up" data-aos-delay="150">Cowboy Six-Shooter Code of Conduct</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 text-left">
+      <!-- Column 1 -->
+      <div class="space-y-4" data-aos="fade-up">
+        <div class="flex items-start gap-3">
+          <span class="flex-shrink-0 bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center font-bold text-black">1</span>
+          <p class="text-gray-800">A cowboy must never take unfair advantage</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="flex-shrink-0 bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center font-bold text-black">2</span>
+          <p class="text-gray-800">A cowboy must always tell the truth</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="flex-shrink-0 bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center font-bold text-black">3</span>
+          <p class="text-gray-800">A cowboy must never go back on his word</p>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="space-y-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="flex items-start gap-3">
+          <span class="flex-shrink-0 bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center font-bold text-black">4</span>
+          <p class="text-gray-800">A cowboy must work with care and skill</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="flex-shrink-0 bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center font-bold text-black">5</span>
+          <p class="text-gray-800">A cowboy must help those in distress</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="flex-shrink-0 bg-yellow-400 w-8 h-8 rounded-full flex items-center justify-center font-bold text-black">6</span>
+          <p class="text-gray-800">A cowboy must respect his customers' property and time</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section id="about" class="bg-[#7B1D10] py-20">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center"> -->
+
+    <!-- LEFT IMAGES -->
+    <!-- <div class="grid grid-cols-2 gap-6" data-aos="fade-up">
+      <img src="assets/images/about-1.jpg" 
+           class="rounded-xl object-cover h-64 w-full -mt-12 hover:scale-105 transition duration-500" alt="">
+
+      <img src="assets/images/about-2.jpg" 
+           class="rounded-xl object-cover h-64 w-full mt-12 hover:scale-105 transition duration-500" alt="">
+    </div> -->
+
+    <!-- RIGHT TEXT -->
+    <!-- <div data-aos="fade-up" data-aos-delay="150">
+      <h2 class="text-yellow-300 text-lg font-semibold mb-2">ABOUT US</h2>
+
+      <p class="text-white leading-relaxed text-sm sm:text-base">
+        HVAC Cowboys brings decades of combined HVAC and plumbing experience to Kansas City. 
+        We pride ourselves on transparent pricing, prompt service, and workmanship you can trust.
+      </p>
+    </div>
+
+  </div>
+</section> -->
+
+<!-- OUR COMMITMENT SECTION -->
+<section id="about" class="py-20 bg-white" data-aos="fade-up">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+    <!-- LEFT SIDE TEXT -->
+    <div>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#7B1D10] mb-10" data-aos="fade-up">
+        Our Commitment
+      </h2>
+
+      <!-- Item 1 -->
+      <div class="flex items-start gap-4 mb-10" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-12 h-12 rounded-xl bg-[#7B1D10] flex items-center justify-center flex-shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.657-1.343 3-3 3S6 12.657 6 11s1.343-3 3-3 3 1.343 3 3zm0 0v4m6-4a6 6 0 11-12 0 6 6 0 0112 0z" />
+          </svg>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-[#7B1D10]">Experience and Dedication</h3>
+          <p class="text-gray-700 mt-1">
+            The sting of suffering and the pain of greed, we’ve experienced it all and emerged stronger.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="flex items-start gap-4 mb-10" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-12 h-12 rounded-xl bg-[#B36A2E] flex items-center justify-center flex-shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-[#7B1D10]">Comfort and Quality</h3>
+          <p class="text-gray-700 mt-1">
+            The deep desires for the comfort of home, we know how to deliver that comfort all year long.
+          </p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="flex items-start gap-4 mb-10" data-aos="fade-up" data-aos-delay="300">
+        <div class="w-12 h-12 rounded-xl bg-[#E0B800] flex items-center justify-center flex-shrink-0">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a8 8 0 10-16 0v2h5m4-6v6" />
+          </svg>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold text-[#7B1D10]">Family-Owned Excellence</h3>
+          <p class="text-gray-700 mt-1">
+            HVAC Cowboys is a family-owned and operated business. With our many years of industry experience, we come prepared to install or repair your heating and cooling systems in Kansas City, MO or within a 60-mile radius.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="relative" data-aos="fade-up" data-aos-delay="400">
+      <img 
+        src="assets/images/havc.jpg"
+        class="rounded-3xl shadow-lg w-full object-cover"
+        alt="Tools and cowboy hat"
+      />
+
+      <!-- Experience Badge (far right outside image) -->
+      <div class="absolute -bottom-6 right-0 translate-x-6 bg-[#7B1D10] text-white px-6 py-3 rounded-xl text-center shadow-lg">
+        <span class="text-lg font-bold">18+</span>
+        <div class="text-xs">Years Experience</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- GALLERY (kept structure from original site; replace images as needed)
+  <section id="gallery" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-xl font-semibold mb-6" data-aos="fade-up">Gallery</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="md:col-span-2 md:row-span-2" data-aos="fade-up">
+        <img src="assets/images/gallery-1.jpg" class="w-full h-full object-cover rounded-xl" alt="">
+      </div>
+
+      <img data-aos="fade-up" data-aos-delay="150" src="assets/images/gallery-2.jpg" class="w-full h-64 object-cover rounded-xl" alt="">
+
+      <div class="grid grid-cols-2 gap-4" data-aos="fade-up" data-aos-delay="300">
+        <img src="assets/images/gallery-3.jpg" class="w-full h-48 object-cover rounded-xl" alt="">
+        <img src="assets/images/gallery-4.jpg" class="w-full h-48 object-cover rounded-xl" alt="">
+      </div>
+    </div>
+  </section> -->
+
+  <!-- FAQ SECTION -->
+<section id="faq" class="bg-[#FAF3DD] py-20" data-aos="fade-up">
+  <div class="max-w-3xl mx-auto px-4 text-center">
+
+    <!-- Title -->
+    <h2 class="text-3xl md:text-4xl font-bold text-[#7B1D10]" data-aos="fade-up">
+      Frequently Asked Questions
+    </h2>
+
+    <!-- Subtitle -->
+    <p class="text-gray-700 mt-3" data-aos="fade-up" data-aos-delay="100">
+      Got questions? We've got answers! Here are the most common questions our customers ask.
+    </p>
+
+    <!-- FAQ List -->
+    <div class="mt-10 space-y-4">
+
+      <!-- FAQ Item 1 -->
+      <div class="faq-item flex flex-col bg-white border border-yellow-300 rounded-2xl px-6 py-4 cursor-pointer hover:border-yellow-400 hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">How often should I service my HVAC?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          You should service your HVAC at least twice a year to maintain optimal performance. Regular maintenance keeps your system efficient and prevents costly repairs.
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="faq-item flex flex-col bg-white border border-yellow-300 rounded-2xl px-6 py-4 cursor-pointer hover:border-yellow-400 hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">What is included in regular HVAC maintenance?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          Regular HVAC maintenance includes cleaning, inspection, filter replacement, and system performance checks to prevent breakdowns.
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="faq-item flex flex-col bg-white border border-yellow-300 rounded-2xl px-6 py-4 cursor-pointer hover:border-yellow-400 hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+        <div class="flex justify-between items-center w-full">
+          <span class="text-gray-800 font-medium text-base sm:text-lg">How quickly can you respond to emergency repairs?</span>
+          <span class="text-xl text-gray-600 ml-4 transition-transform duration-300">+</span>
+        </div>
+        <div class="faq-answer mt-3 text-gray-700 text-sm sm:text-base leading-relaxed text-left hidden">
+          Our team typically responds within 24 hours for emergency HVAC repairs to restore comfort quickly.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Contact Box -->
+    <div class="mt-16 max-w-md mx-auto bg-white border border-yellow-300 rounded-2xl p-10 text-center shadow-sm" data-aos="fade-up" data-aos-delay="500">
+      <h3 class="font-semibold text-lg text-gray-900">Still have questions?</h3>
+      <p class="text-gray-600 mt-1">Don't hesitate to reach out to our friendly cowboys!</p>
+
+      <button class="mt-5 bg-[#8B0A1A] text-white font-medium px-6 py-3 rounded-full hover:bg-[#a50d21] transition">
+        Contact us Today
+      </button>
+    </div>
+
+  </div>
+</section>
+
+  <!-- CTA -->
+  <section class="bg-sky-100 py-16 text-center px-6" data-aos="fade-up">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">Your Comfort, Our Mission</h2>
+    <p class="text-gray-700 max-w-xl mx-auto mb-6">From emergency repairs to full installations — HVAC Cowboys delivers honest work, fast response, and reliable results.</p>
+    <button onclick="scrollToSection('contact')" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition">Talk to us now →</button>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-[#f7f7f7]">  <!-- Off-white background -->
+  <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
+
+    <!-- LEFT BOX -->
+    <div class="bg-white text-black p-8 rounded-xl shadow-md flex flex-col" data-aos="fade-up">
+      <h3 class="font-bold text-lg mb-4">Get a Quote</h3>
+      <p class="text-gray-600 mb-6">We’re ready to ride to your rescue.</p>
+
+      <form class="grid grid-cols-1 gap-4 mt-auto">
+        <input type="text" placeholder="Full Name*" required class="p-3 rounded border border-gray-300 w-full">
+        <input type="email" placeholder="Email*" required class="p-3 rounded border border-gray-300 w-full">
+        <input type="text" placeholder="Phone Number*" required class="p-3 rounded border border-gray-300 w-full">
+        <textarea placeholder="How can we help?*" required class="p-3 rounded border border-gray-300 w-full h-32"></textarea>
+        <button type="submit" class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-600 transition">Send Message →</button>
+      </form>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div data-aos="fade-up" data-aos-delay="150" class="flex justify-center items-center">
+      <img 
+        src="https://static.wixstatic.com/media/5a867c_89f7b2105573490cbb49141e13f4c3fc~mv2.png/v1/fill/w_418,h_655,al_c,q_85,enc_avif,quality_auto/5a867c_89f7b2105573490cbb49141e13f4c3fc~mv2.png"
+        class="rounded-xl object-cover h-full max-h-[600px]" 
+        alt=""
+      >
+    </div>
+
+  </div>
+</section>
+
+  <!-- FOOTER -->
+<footer class="bg-black text-gray-300 pt-12 pb-6">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- About / Logo -->
+    <div class="text-center md:text-left" data-aos="fade-up">
+      <img src="assets/images/logo.jpg" alt="HVAC Cowboys Logo" class="w-20 mx-auto md:mx-0 mb-4 rounded-full border-2 border-white/50">
+      <p class="text-gray-400 text-sm">
+        HVAC Cowboys is your trusted HVAC and plumbing service provider in Kansas City. We deliver quality, comfort, and reliability.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2">
+        <li><a href="#services" class="hover:text-yellow-400 transition">Services</a></li>
+        <li><a href="#about" class="hover:text-yellow-400 transition">About Us</a></li>
+        <li><a href="#faq" class="hover:text-yellow-400 transition">FAQ</a></li>
+        <li><a href="#contact" class="hover:text-yellow-400 transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="text-center md:text-right" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-white font-semibold mb-4">Contact Us</h3>
+      <p class="text-gray-400 text-sm">123 Cowboy St., Kansas City, MO</p>
+      <p class="text-gray-400 text-sm">Phone: (555) 123-4567</p>
+      <p class="text-gray-400 text-sm">Email: info@hvaccowboys.com</p>
+      <div class="flex justify-center md:justify-end gap-4 mt-3">
+        <a href="#" class="text-gray-400 hover:text-yellow-400 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-gray-400 hover:text-yellow-400 transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-gray-400 hover:text-yellow-400 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500 text-sm" data-aos="fade-up" data-aos-delay="300">
+    © 2025 HVAC Cowboys. All rights reserved.
+  </div>
+</footer>
+
+  <!-- AOS Init (kept exactly like original) -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+  </script>
+
+
+</body>
+</html>
