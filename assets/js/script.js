@@ -73,3 +73,17 @@ document.querySelectorAll(".scroll-link").forEach(link => {
 
 
 
+
+
+
+var swiper = new Swiper(".heroSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true
+    },
+  });

@@ -11,6 +11,10 @@
   <!-- AOS Animation Library -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
   <style>
     /* Global */
     body {
@@ -61,11 +65,37 @@
 <div class="relative rounded-3xl overflow-hidden bg-black h-[600px] md:h-[717px]" >
 
     <!-- background image -->
-    <div class="absolute inset-0">
-      <img src="assets/images/hero12.jpg"
-           class="w-full h-full object-cover object-center">
-      <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60"></div>
+    <!-- HERO BACKGROUND SLIDER -->
+<div class="absolute inset-0">
+  <div class="swiper heroSwiper h-full w-full">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <img src="assets/images/hero12.jpg" class="w-full h-full object-cover">
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <img src="assets/images/hero51.jpg" class="w-full h-full object-cover">
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <img src="assets/images/hero52.jpg" class="w-full h-full object-cover">
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <img src="assets/images/hero50.jpg" class="w-full h-full object-cover">
+      </div>
     </div>
+  </div>
+
+  <!-- Gradient Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60"></div>
+</div>
+
 
     <!-- NAV -->
    <div class="relative z-10">
