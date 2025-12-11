@@ -7,22 +7,25 @@
   });
 
   // Smooth scroll function
-  function smoothScroll(targetId) {
-    const target = document.getElementById(targetId);
-    if (!target) return;
+ function smoothScroll(targetId) {
+  const target = document.getElementById(targetId);
+  if (!target) return;
 
+  // Wait for next animation frame to ensure element is visible
+  requestAnimationFrame(() => {
     const topOffset = target.getBoundingClientRect().top + window.pageYOffset;
-
     window.scrollTo({
       top: topOffset,
       behavior: "smooth"
     });
+  });
 
-    // Close mobile menu after click
-    if (!mobileMenu.classList.contains("hidden")) {
-      mobileMenu.classList.add("hidden");
-    }
+  // Close mobile menu if open
+  if (!mobileMenu.classList.contains("hidden")) {
+    mobileMenu.classList.add("hidden");
   }
+}
+
 
   // Attach smooth scroll to all nav links
   document.querySelectorAll(".nav-link").forEach(link => {
@@ -67,3 +70,6 @@ document.querySelectorAll(".scroll-link").forEach(link => {
     smoothScroll(href);
   });
 });
+
+
+
